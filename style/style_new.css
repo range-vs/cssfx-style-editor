@@ -1,0 +1,56 @@
+.button{
+      -fx-background-radius:  30;
+      -fx-border-color:  #000000ff;
+      -fx-text-fill:  #003300ff;
+      -fx-background-color:  #804d80ff;
+      -fx-border-radius:  25;
+      -fx-padding:  1 1 1 1 ;
+      -fx-border-width:  2;
+      -fx-font-family:  Curlz MT;
+      -fx-font-size:  17px;
+}
+
+.slider{
+      -fx-text-fill:   #006464;
+      -fx-background-color:   #DFB951;
+      -fx-border-radius:   20;
+}
+
+.label{
+      -fx-text-fill:   #006464;
+      -fx-background-color:   #DFB951;
+      -fx-border-radius:   20;
+      -fx-font-family:   "Forte";
+      -fx-font-size:   9pt;
+}
+
+.check-box{
+      -fx-text-fill:   #006464;
+      -fx-background-color:   #DFB951;
+      -fx-border-radius:   20;
+}
+
+.root{
+      -fx-background-radius:   10;
+      -fx-border-color:   black;
+      -fx-background-color:   #99b3ff;
+      -fx-border-radius:   10;
+      -fx-focus-color:   #B6A678;
+      -fx-border-width:   2;
+      -fx-font-family:   "Tahoma";
+     -fx-padding: 10 10 10 10 ;
+      -fx-font-size:   14pt;
+}
+
+.combo-box{
+      -fx-text-fill:   #006464;
+      -fx-background-color:   #DFB951;
+      -fx-border-radius:   20;
+}
+
+.text-field{
+      -fx-text-fill:   #006464;
+      -fx-background-color:   #DFB951;
+      -fx-border-radius:   20;
+}
+

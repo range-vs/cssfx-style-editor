@@ -11,7 +11,9 @@ import java.util.Map;
 public class Model{
 
     private byte data[] = new byte[4096];
-//чтение файла
+    private HashMap<String,HashMap<String,String>> all;
+
+    //чтение файла
     public void readFile(String path) {
         try {
             FileInputStream fileInputStream = new FileInputStream(path);
@@ -29,10 +31,11 @@ public class Model{
             e.printStackTrace();
         }
     }
-//читает и записывает
+
+    //читает и записывает
     public HashMap<String,HashMap<String,String>> parseData(){
         ArrayList<String> classes = new ArrayList<>();
-        HashMap<String,HashMap<String,String>> all = new HashMap<>();
+        all = new HashMap<>();
         StringBuilder stringBuilder = new StringBuilder();
         for(int i=0;i<data.length;i++) {
             stringBuilder.append((char)data[i]);
@@ -61,7 +64,8 @@ public class Model{
                          }
                          j++;
                      }
-                     String attr[] = cssvalues.toString().split(";");
+                     String cssValues = cssvalues.toString().replaceAll("\r\n    ", "");
+                     String attr[] = cssValues.split(";");
                      for(int k=0;k<attr.length-1;k++){
                          String tmp[] = attr[k].split(":");
                             css.put(tmp[0],tmp[1]);
@@ -121,6 +125,10 @@ public class Model{
             }
         }
         return null;
+    }
+
+    public HashMap<String, HashMap<String, String>> getStyles() {
+        return all;
     }
 }
 
