@@ -10,7 +10,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -72,6 +71,11 @@ public class Controller {
             put(".slider", sliderCss);
             put(".text-field", textFieldCss);
         }};
+        model = new Model();
+        System.out.println("style/style.css");
+        String filepath = "style/style.css";
+        filename = "style.css";
+        initPreview(filepath);
     }
 
 
@@ -89,6 +93,10 @@ public class Controller {
         String filepath = file.getAbsolutePath();
         filename = file.getName();
         gridCss.getStylesheets().add("file:///" + filepath.replace('\\', '/'));
+        initPreview(filepath);
+    }
+
+    private void initPreview(String filepath){
         labelfilename.setText(filename);
         model.readFile(filepath);
         HashMap<String, HashMap<String, String>> parsedData = model.parseData();
